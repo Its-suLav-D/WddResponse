@@ -7,16 +7,8 @@ const cors = require("cors");
 // Create an express application
 const app = express();
 
-app.use(express.json());
 app.use(cors());
-
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.setHeader("Access-Control-Allow-Methods", "*");
-  res.setHeader("Content-Type", "application/json");
-  next();
-});
+app.use(express.json());
 
 // Create a route for the home page
 app.get("/", (req, res) => {
